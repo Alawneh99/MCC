@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(50, 50, 50, 0.7);
+  width: 100%;
+  padding: 30px 20px;
+  padding-top: 60px;
+  height: 55%;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* أضف هذا */
+  clip-path: polygon(
+    0 0,       /* top-left */
+    90% 0,     /* top-right (تخفض العرض من اليمين) */
+    100% 100%, /* bottom-right (تنزل للنهاية بزاوية) */
+    0% 100%    /* bottom-left */
+  );
+}
+
+
+
+.overlay h1 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #f9a825;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+.desc {
+  font-size: 28px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-end;
+}
+.logo img {
+  width: 300px;
+  height: auto;
+}
+.start-btn {
+  background-color: #f9a825;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 400px;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #f57f17;
+}

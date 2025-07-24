@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    /* Full-width top image */
+    .top-image {
+      width: 100%;
+      height: 590px;
+      display: block;
+      object-fit: fill;
+    }
+
+    /* Bottom panel */
+    .panel {
+      position: relative;
+      width: 100%;
+      height: 25vh;
+      background-color: #A19995;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .panel p {
+      color: #F6EBDD;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .panel p span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Triangle background and logo in corner */
+    .logo-corner .triangle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background-color: #8B8681;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+      mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+    }
+
+    .logo-corner img {
+      position: absolute;
+      bottom: 30px;
+      right: 0px;
+      width: 150px;
+      z-index: 3;
+      object-fit: contain;
+      mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
+
+    /* Right stripe */
+    .page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 74px;
+  height: 500px;
+  background-color: #D0C8C0;
+  z-index: 2;
+  
+  /* Apply vertical gradient fade */
+  mask-image: linear-gradient(to top, rgba(0,0,0,1) 1%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 1%, rgba(0,0,0,0));
+}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top full-width image -->
+    <img src="./Thank you.jpg" alt="Top Image" class="top-image" />
+
+    <!-- Bottom panel -->
+    <div class="panel">
+      <p>THANK YOU! OUR TEAM WILL CONTACT YOU<br>
+        <span>SHORTLY WITH A TAILORED PROPOSAL</span>
+      </p>
+      <div class="logo-corner">
+        <div class="triangle"></div>
+        <img src="./Logo.png" alt="Logo">
+      </div>
+    </div>
+  </div>
+</body>
+<script>(function () {
+  const isReload =
+    performance.navigation.type === 1 ||
+    performance.getEntriesByType("navigation")[0].type === "reload";
+
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if (isReload && currentPage !== "index.html" && currentPage !== "") {
+    window.location.href = "index.html";
+  }
+  
+
+})();</script>
+</html>

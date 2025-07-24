@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #A99E9A;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Right shadow strip */
+.page::after {
+  content: "";
+  position: absolute;
+  top: 450px;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #020202;
+  z-index: 1;
+    mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+/* Content block */
+.info {
+  z-index: 2;
+  text-align: center;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.2vw;
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+  margin-bottom: 1vh;
+  color: #F6EBDD;
+}
+
+
+.dropdown select {
+  padding: 0.5em;
+  font-size: 1vw;
+  border-radius: 5px;
+  border: none;
+  background: #f9f9f9;
+  color: #333;
+  margin-top: 0.5vh;
+}
+
+.fields {
+  margin: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  font-size: 1vw;
+}
+
+.fields input,
+.fields select {
+  padding: 0.4em 0.6em;
+  font-size: 1vw;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5vh;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: centrer;
+  gap: 0.5vh;
+  font-size: 1vw;
+  margin-top: 1vh;
+}
+
+/* Full-width bottom image */
+.bottom-image {
+  position: relative;  /* keep this */
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 1vh;
+  z-index: 10;
+}
+
+.bottom-image img {
+  position: absolute;  /* add this */
+  top: 20px;           /* adjust this number to move image up/down */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+
+.logo-corner img {
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+  width: 150px;
+  z-index: 3;
+  object-fit: contain;
+}
+.next-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2vw;
+  color: #ffffff; /* page background color for contrast */
+  background-color: #f57f17; /* bright golden yellow fill */
+  border: 2px solid #f9a825;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 4;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #f9a825; /* deeper yellow fill */
+  color: #fff; /* white text on hover for better contrast */
+}
